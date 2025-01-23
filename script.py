@@ -5,7 +5,6 @@ import os
 
 def pdf_to_ent(pdf_dir, ent_dir):
     try:
-        # Listar archivos en el directorio de entrada y filtrar los que comiencen con "INV"
         pdf_files = [f for f in os.listdir(pdf_dir) if f.startswith("INV") and f.endswith(".pdf")]
         
         if not pdf_files:
@@ -74,12 +73,9 @@ def pdf_to_ent(pdf_dir, ent_dir):
         print(f"Error al procesar el archivo: {e}")
 
 
-# Directorios de entrada y salida
-pdf_dir = r"C:\facturas_pdf"  # Cambia a la ruta donde están tus PDFs
-ent_dir = r"C:\facturas_ent"  # Cambia a la ruta donde quieres guardar los archivos .ent
+pdf_dir = r"C:\facturas_pdf"  
+ent_dir = r"C:\facturas_ent"  
 
-# Crear el directorio de salida si no existe
 os.makedirs(ent_dir, exist_ok=True)
 
-# Ejecutar la función
 pdf_to_ent(pdf_dir, ent_dir)
