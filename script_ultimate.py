@@ -25,7 +25,6 @@ def pdf_to_ent(pdf_path, ent_path):
         ent_content += f"DIRECCION1:      {direccion.group(1).strip().replace('\n', ' ') if direccion else 'DIRECCION DESCONOCIDA'}\n"
 
         if fecha:
-            # Convertir la fecha de MM/DD/AAAA a MM-DD-AAAA
             fecha_obj = datetime.strptime(fecha.group(1), "%m/%d/%Y")
             fecha_formateada = fecha_obj.strftime("%m-%d-%Y")
         else:
@@ -61,7 +60,6 @@ def pdf_to_ent(pdf_path, ent_path):
     except Exception as e:
         print(f"Error al procesar el archivo: {e}")
 
-# Ruta del archivo PDF de entrada y del archivo .ent de salida
 pdf_path = "INV_2025_00010.pdf"  # Cambia a la ruta real del archivo
 ent_path = "fa000000013.ent"  # Nombre del archivo de salida
 
